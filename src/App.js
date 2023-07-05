@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+// import bootstrap
+import "bootstrap/dist/css/bootstrap.css";
+import { ThemeContext } from "./components/Header/Header";
+import React, { useContext } from "react";
+
 
 function App() {
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Header>
+
+        <Main />
+    </Header>
   );
 }
 
